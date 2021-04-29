@@ -1,0 +1,92 @@
+body {
+	background-color: whitesmoke;
+	overflow-y: hidden;
+}
+
+.sec_nav {
+	background-color: white;
+}
+.sec_nav img {
+	height: 50px;
+}
+.sec_nav div {
+	padding: 10px;
+}
+.sec_nav .col-auto:hover {
+	background-color: whitesmoke;
+}
+
+.sec_dash {
+	height: calc(100vh - 70px);
+}
+.sec_sidebar {
+	background-color: white;
+	position: relative;
+	overflow-y: scroll;
+	height: calc(100vh - 70px);
+}
+
+.rounded-circle {
+	height: 40px;
+	width: 40px;
+	font-size: 25px;
+}
+
+.sec_dash {
+	position: relative;
+	background-color: black;
+}
+.tool_agent {
+	position: absolute;
+	bottom: 25px;
+	right: 25px;
+}
+.tool_nav {
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas:
+		". up . . ."
+		"left . right zoomin zoomout"
+		". down . . .";
+}
+
+.btn_nav_left {
+	grid-area: left;
+}
+.btn_nav_up {
+	grid-area: up;
+}
+.btn_nav_down {
+	grid-area: down;
+}
+.btn_nav_right {
+	grid-area: right;
+}
+.btn_nav_in {
+	grid-area: zoomin;
+}
+.btn_nav_out {
+	grid-area: zoomout;
+}
+canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
+#text_agent {
+	max-width: 350px;
+}
+#cont_navbar {
+	height: 70px;
+}
+#cont_login {
+	height: calc(100vh - 70px);
+	background-image: url("../assets/animals.svg"), url("../assets/pattern.svg");
+	background-repeat: no-repeat;
+	background-size: 700px 700px, cover;
+	background-position: 200px 170px, center;
+}
