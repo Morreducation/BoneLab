@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+	<title>Fossil Lab</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div id="cont_navbar" class="row justify-content-between align-items-center">
+			<div class="col-auto">
+				<h1 class="mb-0"><span class="text-primary">Fossil</span> Lab</h1>
+			</div>
+			<div class="col-auto">
+				<a id="btn_export" role="button" class="btn btn-primary btn-lg text-white text-uppercase"><i
+						class="fas fa-download mr-2"></i><span class="d-none d-md-inline">export as json</span></a>
+			</div>
+		</div>
+		<div id="cont_login" class="row justify-content-around align-items-center">
+			<div class="col-12 col-md-5 col-lg-5 align-self-start">
+				<h2 class="text-secondary"
+					style="background-color: whitesmoke; margin-top: 150px; padding-top: 25px; width: 400px; text-transform: uppercase;">
+					Think critically about modeling artifacts of dinosaur fossils</h2>
+			</div>
+			<div class="col-12 col-md-5 col-lg-5">
+				<h5 class="mb-4 hue_2 d-none d-xl-block text-primary">LEARN FOR FREE, NO LOGIN ACCOUNT REQUIRED - INFO
+					IS USED FOR RESEARCH ONLY</h4>
+					<div class="card mb-5">
+						<div class="card-body">
+							<form>
+								<div class="form-group">
+									<label for="input_username" class="col-form-label">Username:</label>
+									<input type="text" class="form-control" id="input_username" />
+								</div>
+								<div class="form-group">
+									Gender:
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="gender_Radios" id="input_gender1" value="Female"
+											checked />
+										<label class="form-check-label" for="input_gender1">
+											Female
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="gender_Radios" id="input_gender2" value="Male" />
+										<label class="form-check-label" for="input_gender2">
+											Male
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="gender_Radios" id="input_gender3"
+											value="Non-binary/Third gender" />
+										<label class="form-check-label" for="input_gender3">
+											Non-binary/Third gender
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="gender_Radios" id="input_gender4"
+											value="I prefer not to answer" />
+										<label class="form-check-label" for="input_gender4">
+											I prefer not to answer
+										</label>
+									</div>
+									<!--<div class="form-check">
+										<input
+											class="form-check-input"
+											type="radio"
+											name="gender_Radios"
+											id="gender_Radios5"
+											value="Other"
+										/>
+										<label class="form-check-label" for="gender_Radios5">
+											Other
+										</label>
+									</div>-->
+								</div>
+								<div class="form-group">
+									<label for="input_age" class="col-form-label">Age:</label>
+									<input type="text" class="form-control" id="input_age" />
+								</div>
+								<div class="form-group">
+									<label for="input_degree" class="col-form-label">Degree:</label>
+									<input type="text" class="form-control" id="input_degree" />
+								</div>
+								<div class="form-group">
+									<label for="input_university" class="col-form-label">University:</label>
+									<input type="text" class="form-control" id="input_university" />
+								</div>
+								<div class="form-group">
+									<label for="input_gpa" class="col-form-label">GPA:</label>
+									<input type="text" class="form-control" id="input_gpa" />
+								</div>
+							</form>
+							<button id="btn_tutorialvideo" class="btn btn-primary w-100 mb-2 text-white text-uppercase"
+								onclick="window.open('https://youtu.be/9O5zKJ01bfE','_blank','resizable=yes')"><i
+									class="fab fa-youtube mr-2"></i>tutorial video</button>
+							<button id="btn_start" class="btn btn-primary w-100 text-white text-uppercase"><i
+									class="fas fa-sign-in-alt mr-2"></i>start</button>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div id="cont_toolbar" class="row sec_nav align-items-center d-none">
+			<div class="col">
+				<h4><span class="text-primary">Fossil</span> Lab</h4>
+			</div>
+			<div class="col-auto"><img id="btn_assets" src="assets/model.png" /></div>
+			<div class="col-auto"><img id="btn_annotation" src="assets/annotation.png" /></div>
+			<div class="col-auto"><img id="btn_controls" src="assets/orientation.png" /></div>
+			<div class="col-auto"><img id="btn_agent" src="assets/scale.png" /></div>
+		</div>
+		<div id="cont_dashboard" class="row sec_dash d-none">
+			<div id="sec_leftbar" class="col-3 p-0 sec_sidebar">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item cont_model">
+						<span class="text-uppercase d-inline-block mt-2 text_title_leftbar">Cras justo odio</span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<button id="btn_more_left_1" type="button"
+								class="btn btn-outline-secondary btn_more_leftbar">Less</button>
+							<button id="btn_open_left_1" type="button"
+								class="btn btn-outline-secondary btn_open_leftbar">Open</button>
+						</div>
+						<p class="text-muted mt-3 text-justify text_descriptor_leftbar">
+							Life finds a way. You really think you can fly that thing? Yeah, but John, if The Pirates of
+							the Caribbean breaks
+							down, the pirates don’t eat the tourists. Hey, take a look at the earthlings. Goodbye! Hey,
+							you know how I'm, like,
+							always trying to save the planet? Here's my chance. You really think you can fly that thing?
+							Hey, take a look at the
+							earthlings. Goodbye! They're using our own satellites against us. And the clock is ticking.
+							I gave it a cold? I gave
+							it a virus. A computer virus. Yeah, but your scientists were so preoccupied with whether or
+							not they could, they
+							didn't stop to think if they should.
+						</p>
+					</li>
+					<li class="list-group-item cont_model">
+						<span class="text-uppercase d-inline-block mt-2 text_title_leftbar">Cras justo odio</span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<button id="btn_more_left_2" type="button"
+								class="btn btn-outline-secondary btn_more_leftbar">More</button>
+							<button id="btn_open_left_2" type="button"
+								class="btn btn-outline-secondary btn_open_leftbar">Open</button>
+						</div>
+						<p class="text-muted mt-3 text-justify d-none text_descriptor_leftbar"></p>
+					</li>
+					<li class="list-group-item cont_model">
+						<span class="text-uppercase d-inline-block mt-2 text_title_leftbar">Cras justo odio</span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<button id="btn_more_left_3" type="button"
+								class="btn btn-outline-secondary btn_more_leftbar">More</button>
+							<button id="btn_open_left_3" type="button"
+								class="btn btn-outline-secondary btn_open_leftbar">Open</button>
+						</div>
+						<p class="text-muted mt-3 text-justify d-none text_descriptor_leftbar"></p>
+					</li>
+					<li class="list-group-item cont_model">
+						<span class="text-uppercase d-inline-block mt-2 text_title_leftbar">Cras justo odio</span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<button id="btn_more_left_4" type="button"
+								class="btn btn-outline-secondary btn_more_leftbar">More</button>
+							<button id="btn_open_left_4" type="button"
+								class="btn btn-outline-secondary btn_open_leftbar">Open</button>
+						</div>
+						<p class="text-muted mt-3 text-justify d-none text_descriptor_leftbar"></p>
+					</li>
+					<li class="list-group-item cont_model">
+						<span class="text-uppercase d-inline-block mt-2 text_title_leftbar">Cras justo odio</span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<button id="btn_more_left_5" type="button"
+								class="btn btn-outline-secondary btn_more_leftbar">More</button>
+							<button id="btn_open_left_5" type="button"
+								class="btn btn-outline-secondary btn_open_leftbar">Open</button>
+						</div>
+						<p class="text-muted mt-3 text-justify d-none text_descriptor_leftbar"></p>
+					</li>
+				</ul>
+				<button id="btn_prev" type="button" class="btn btn-outline-secondary m-3 float-left" disabled>Prev</button>
+				<button id="btn_next" type="button" class="btn btn-outline-secondary m-3 float-right">Next</button>
+			</div>
+			<div id="sec_dashboard" class="col p-0">
+				<div class="tool_nav">
+					<div class="btn_nav_left rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-left"></i>
+					</div>
+					<div class="btn_nav_up rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="btn_nav_down rounded-circle bg-primary text-center text-white"><i class="fas fa-chevron-down"></i>
+					</div>
+					<div class="btn_nav_right rounded-circle bg-primary text-center text-white"><i
+							class="fas fa-chevron-right"></i></div>
+					<div class="btn_nav_in rounded-circle bg-primary text-center text-white"><i class="fas fa-search-plus"></i>
+					</div>
+					<div class="btn_nav_out rounded-circle bg-primary text-center text-white"><i class="fas fa-search-minus"></i>
+					</div>
+				</div>
+				<div class="tool_agent">
+					<div id="text_agent" class="rounded-pill bg-white p-3 m-3 d-none"></div>
+					<div class="text-center text-white float-right">
+						<img src="assets/agent.png" height="auto" width="80px">
+					</div>
+				</div>
+			</div>
+			<div id="sec_rightbar" class="col-3 p-0 sec_sidebar">
+				<div class="input-group p-3">
+					<div class="input-group-prepend">
+						<button id="btn_comment" class="btn btn-outline-secondary dropdown-toggle" type="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+							style="z-index: 99 !important;">Observe</button>
+						<div class="dropdown-menu">
+							<!--<a id="btn_comment_obs" class="dropdown-item" href="#">Observe</a>
+							<a id="btn_comment_ide" class="dropdown-item" href="#">Identify</a>
+						! Fall 2020 prompts will appear here instead...
+						-->
+							<a class="dropdown-item" href="#">The bone is white</a>
+							<a class="dropdown-item" href="#">I think it is a skull</a>
+							<a class="dropdown-item" href="#">There are teeth</a>
+							<a class="dropdown-item" href="#">The nose is long</a>
+							<a class="dropdown-item" href="#">[fill in] they are likely meant for grooming</a>
+							<a class="dropdown-item" href="#">[fill in] they are likely meant for grasping and tearing plants</a>
+							<a class="dropdown-item" href="#">The canine teeth are large and long</a>
+							<a class="dropdown-item" href="#">[fill in] the jaw cannot move side to side</a>
+						</div>
+					</div>
+					<input class="form-control" id="input_comment" style="min-width: 50%;" type="text"
+						placeholder="Make an observation" />
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="btn_add">Add</button>
+					</div>
+					<small id="text_comment_help" class="form-text text-muted">Make observations by gathering
+						information about the fossil.</small>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item text-justify cont_comment">
+						<span class="icon_label_right rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i
+								class="fas fa-search"></i></span>
+						<span id="text_label_right1" class="text_label_right text-uppercase d-inline-block mt-2">Observation</span>
+						<!--<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-heart"></i><span
+								class="text_label_likes ml-1">0</span></span>-->
+						<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-comment"></i><span
+								class="text_label_replies ml-1">0</span></span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<!--<button id="btn_like_right_1" type="button"
+								class="btn btn-outline-secondary btn_like_rightbar">Like</button> Fall 2020-->
+							<button id="btn_view_right_1" type="button"
+								class="btn btn-outline-secondary btn_view_rightbar">View</button>
+							<button id="btn_more_right_1" type="button"
+								class="btn btn-outline-secondary btn_more_rightbar">More</button>
+						</div>
+						<p class="text-muted mt-3 text-justify text_comment"></p>
+						<p class="text-muted ml-4 text-justify text_reply d-none"></p>
+						<a id="btn_reply1" class="text-muted ml-4 text-justify btn_reply d-none" href="#">Add an Inference</a>
+						<div class="input-group mt-2 cont_reply d-none">
+							<input class="form-control input_reply" id="input_comment1" type="text" placeholder="Make an inference" />
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary btn_add" type="button" id="btn_add1">Add</button>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item text-justify cont_comment">
+						<span class="icon_label_right rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i
+								class="fas fa-search"></i></span>
+						<span id="text_label_right2" class="text_label_right text-uppercase d-inline-block mt-2">Observation</span>
+						<!--<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-heart"></i><span
+								class="text_label_likes ml-1">0</span></span>-->
+						<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-comment"></i><span
+								class="text_label_replies ml-1">0</span></span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<!--<button id="btn_like_right_2" type="button"
+								class="btn btn-outline-secondary btn_like_rightbar">Like</button> ! Fall 2020-->
+							<button id="btn_view_right_2" type="button"
+								class="btn btn-outline-secondary btn_view_rightbar">View</button>
+							<button id="btn_more_right_2" type="button"
+								class="btn btn-outline-secondary btn_more_rightbar">More</button>
+						</div>
+						<p class="text-muted mt-3 text-justify text_comment"></p>
+						<p class="text-muted ml-4 text-justify text_reply d-none"></p>
+						<a id="btn_reply2" class="text-muted ml-4 text-justify btn_reply d-none" href="#">Add an Inference</a>
+						<div class="input-group mt-2 cont_reply d-none">
+							<input class="form-control input_reply" id="input_comment2" type="text" placeholder="Make an inference" />
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary btn_add" type="button" id="btn_add2">Add</button>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item text-justify cont_comment">
+						<span class="icon_label_right rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i
+								class="fas fa-search"></i></span>
+						<span id="text_label_right3" class="text_label_right text-uppercase d-inline-block mt-2">Observation</span>
+						<!--<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-heart"></i><span
+								class="text_label_likes ml-1">0</span></span>-->
+						<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-comment"></i><span
+								class="text_label_replies ml-1">0</span></span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<!--<button id="btn_like_right_3" type="button"
+								class="btn btn-outline-secondary btn_like_rightbar">Like</button> ! Fall 2020-->
+							<button id="btn_view_right_3" type="button"
+								class="btn btn-outline-secondary btn_view_rightbar">View</button>
+							<button id="btn_more_right_3" type="button"
+								class="btn btn-outline-secondary btn_more_rightbar">More</button>
+						</div>
+						<p class="text-muted mt-3 text-justify text_comment"></p>
+						<p class="text-muted ml-4 text-justify text_reply d-none"></p>
+						<a id="btn_reply3" class="text-muted ml-4 text-justify btn_reply d-none" href="#">Add an Inference</a>
+						<div class="input-group mt-2 cont_reply d-none">
+							<input class="form-control input_reply" id="input_comment3" type="text" placeholder="Make an inference" />
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary btn_add" type="button" id="btn_add3">Add</button>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item text-justify cont_comment">
+						<span class="icon_label_right rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i
+								class="fas fa-search"></i></span>
+						<span id="text_label_right4" class="text_label_right text-uppercase d-inline-block mt-2">Observation</span>
+						<!--<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-heart"></i><span
+								class="text_label_likes ml-1">0</span></span>-->
+						<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-comment"></i><span
+								class="text_label_replies ml-1">0</span></span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<!--<button id="btn_like_right_4" type="button"
+								class="btn btn-outline-secondary btn_like_rightbar">Like</button> ! Fall 2020 -->
+							<button id="btn_view_right_4" type="button"
+								class="btn btn-outline-secondary btn_view_rightbar">View</button>
+							<button id="btn_more_right_4" type="button"
+								class="btn btn-outline-secondary btn_more_rightbar">More</button>
+						</div>
+						<p class="text-muted mt-3 text-justify text_comment"></p>
+						<p class="text-muted ml-4 text-justify text_reply d-none"></p>
+						<a id="btn_reply4" class="text-muted ml-4 text-justify btn_reply d-none" href="#">Add an Inference</a>
+						<div class="input-group mt-2 cont_reply d-none">
+							<input class="form-control input_reply" id="input_comment4" type="text" placeholder="Make an inference" />
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary btn_add" type="button" id="btn_add4">Add</button>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item text-justify cont_comment">
+						<span class="icon_label_right rounded-circle bg-primary text-white mr-2 d-inline-block float-left"><i
+								class="fas fa-search"></i></span>
+						<span id="text_label_right5" class="text_label_right text-uppercase d-inline-block mt-2">Observation</span>
+						<!--<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-heart"></i><span
+								class="text_label_likes ml-1">0</span></span>-->
+						<span class="d-inline-block mt-2 ml-2 text-primary"><i class="fas fa-comment"></i><span
+								class="text_label_replies ml-1">0</span></span>
+						<div class="btn-group float-right" role="group" aria-label="Basic example">
+							<!--<button id="btn_like_right_5" type="button"
+								class="btn btn-outline-secondary btn_like_rightbar">Like</button> ! Fall 2020 -->
+							<button id="btn_view_right_5" type="button"
+								class="btn btn-outline-secondary btn_view_rightbar">View</button>
+							<button id="btn_more_right_5" type="button"
+								class="btn btn-outline-secondary btn_more_rightbar">More</button>
+						</div>
+						<p class="text-muted mt-3 text-justify text_comment"></p>
+						<p class="text-muted ml-4 text-justify text_reply d-none"></p>
+						<a id="btn_reply5" class="text-muted ml-4 text-justify btn_reply d-none" href="#">Add an Inference</a>
+						<div class="input-group mt-2 cont_reply d-none">
+							<input class="form-control input_reply" id="input_comment5" type="text" placeholder="Make an inference" />
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary btn_add" type="button" id="btn_add5">Add</button>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<button id="btn_prev2" type="button" class="btn btn-outline-secondary m-3 float-left" disabled>Prev</button>
+				<button id="btn_next2" type="button" class="btn btn-outline-secondary m-3 float-right">Next</button>
+			</div>
+		</div>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<!-- Three.js -->
+	<script src="js/three.js"></script>
+	<script src="js/GLTFLoader.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<!-- Fossil Lab -->
+	<script src="js/data.js"></script>
+	<script src="js/variables.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/listener.js"></script>
+</body>
+
+</html>
