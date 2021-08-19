@@ -1,5 +1,5 @@
 body {
-	background-color: whitesmoke;
+	background-color: #70a9a1;
 	overflow-y: hidden;
 }
 
@@ -47,8 +47,8 @@ body {
 	left: 25px;
 	display: grid;
 	grid-gap: 10px;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows:  1fr 1fr;
 	grid-template-areas:
 		". up . . ."
 		"left . right zoomin zoomout"
@@ -80,13 +80,32 @@ canvas {
 #text_agent {
 	max-width: 350px;
 }
+
 #cont_navbar {
 	height: 70px;
 }
 #cont_login {
 	height: calc(100vh - 70px);
-	background-image: url("../assets/animals.svg"), url("../assets/pattern.svg");
+	background-image: url("../assets/MSkull.svg"), url("../assets/Back2.svg");
 	background-repeat: no-repeat;
 	background-size: 700px 700px, cover;
-	background-position: 200px 170px, center;
+	background-position: 300px 170px, center;
+}
+.text-secondary{
+    color: #093824 !important;
+}
+.text-primary{
+    color: #ffc857 !important;
+}
+.btn{
+    background-color: #093824;
+    color: #ffc857 !important;
+    border-color: #ffc857 !important;
+}
+.btn:hover{
+    background-color: #808782 !important;
+    color: #ffc857 !important;
+}
+.btn-outline-secondary{
+    background-color: #093824 !important;
 }

@@ -30,7 +30,7 @@ btn_add.addEventListener("click", function () {
 	} else {
 		gender = input_gender4.value;
 	}
-	//try{
+	//try {
 	data2.push({
 		metadata: {
 			version: "FossilLabv1.0_testversion",
@@ -45,55 +45,22 @@ btn_add.addEventListener("click", function () {
 			gpa: input_gpa.value,
 			gender: gender,
 		},
-		model: {
-			id: "a00001",
-			name: "fossil_1"
-		},
+		model: { id: "a00001", name: "fossil_1" },
 		like: 0,
 		comment: comment,
 		count: observation_count,
 		replies: [],
-		camera: {
-			x: cam_x,
-			y: cam_y,
-			z: cam_z,
-			distance: zoom
-		},
-		euler: {
-			order: "XYZ",
-			x: euler_x,
-			y: euler_y,
-			z: euler_z
-		},
-		quaternion: {
-			x: quaternion_x,
-			y: quaternion_y,
-			z: quaternion_z,
-			w: quaternion_w
-		},
-		position: {
-			x: position_x,
-			y: position_y,
-			z: position_z
-		},
-		scale: {
-			x: scale_x,
-			y: scale_y,
-			z: scale_z
-		},
-		label: {
-			prompt: agent[counter3 - 1].label,
-			comment: comment_label
-		},
+		camera: { x: cam_x, y: cam_y, z: cam_z, distance: zoom },
+		euler: { order: "XYZ", x: euler_x, y: euler_y, z: euler_z },
+		quaternion: { x: quaternion_x, y: quaternion_y, z: quaternion_z, w: quaternion_w },
+		position: { x: position_x, y: position_y, z: position_z },
+		scale: { x: scale_x, y: scale_y, z: scale_z },
+		label: { prompt: agent[counter3 - 1].label, comment: comment_label },
 	});
 	console.log(data2);
 	observation_count = observation_count + 1;
-
 	logComment(data2.length - 1);
-
-
-
-	//	} catch {
+	//} catch {
 	//console.log("No model is loaded in the view");
 	//}
 	loadComment(counter2);
@@ -166,11 +133,11 @@ array_more_rightbar.forEach((item) => {
 		toggleComment(event.target.id);
 	});
 });
-/*array_like_rightbar.forEach((item) => {
+array_like_rightbar.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		likeComment(event.target.id);
 	});
-});*/
+});
 array_btn_reply_rightbar.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		toggleReply(event.target.id);
@@ -292,7 +259,6 @@ btn_export.addEventListener("click", function () {
 btn_start.addEventListener("click", function () {
 	showInterfaceView("dashboard");
 });
-/*
 btn_comment_obs.addEventListener("click", function () {
 	text_comment_help.textContent = "Make observations by gathering information about the fossil.";
 	btn_comment.textContent = "Observe";
@@ -303,12 +269,3 @@ btn_comment_ide.addEventListener("click", function () {
 	btn_comment.textContent = "Identify";
 	input_comment.placeholder = "Make an identification";
 });
-
-! Fall 2020 deletion
-*/
-/* Fall 2020 - new listeners*/
-list_prompts.forEach(element => element.addEventListener("click", function (element) {
-	var string = input_comment.value;
-	string = element.target.innerText + " " + string;
-	input_comment.value = string;
-}));

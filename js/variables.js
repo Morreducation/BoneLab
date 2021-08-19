@@ -51,7 +51,7 @@ var text_agent = document.getElementById("text_agent");
 var input_comment = document.getElementById("input_comment");
 var btn_add = document.getElementById("btn_add");
 var array_comment_rightbar = document.querySelectorAll(".cont_comment");
-/*var array_like_rightbar = document.querySelectorAll(".btn_like_rightbar");*/
+var array_like_rightbar = document.querySelectorAll(".btn_like_rightbar");
 var array_more_rightbar = document.querySelectorAll(".btn_more_rightbar");
 var array_text_rightbar = document.querySelectorAll(".text_comment");
 var array_text_reply_rightbar = document.querySelectorAll(".text_reply");
@@ -71,6 +71,3 @@ var observation_count = 0;
 var timer;
 var fossil;
 let scene, camera, renderer, model;
-
-/* Fall 2020 - New variables */
-var list_prompts = document.querySelectorAll(".dropdown-item");
