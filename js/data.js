@@ -1,8 +1,8 @@
 var data = [
 	{
 		id: "a00001",
-		title: "Mystery Fossil 1",
-		descriptor: "A fossil that belongs to an unknown dinosaur species.",
+		title: "Mystery Bone",
+		descriptor: "A bone that belongs to a mystery creature",
 		url: "./models/allosaurus/claw.glb",
 	},
 ];
@@ -14,23 +14,23 @@ var data2 = [];
 var agent = [
 	{
 		label: "prompt_1",
-		prompt: "Look at this bone from all angles and talk about the details you see.",
+		prompt: "Prompt 1",
 	},
 	{
 		label: "prompt_2",
-		prompt: "What part of the animal is the bone from?",
+		prompt: "Prompt 2",
 	},
 	{
 		label: "prompt_3",
-		prompt: "Was the animal that it came from was a carnivore or herbivore?",
+		prompt: "Prompt 3",
 	},
 	{
 		label: "prompt_4",
-		prompt: "Can you move and interact with the bone model in ways that help you see how it might have functioned in real-life?",
+		prompt: "Prompt 4",
 	},
 	{
 		label: "prompt_5",
 		prompt:
-			"This model is in fact an Allosaurus Claw, which is a carnivore, can you now move and interact with the bone model again to demonstrate how it might have functioned in real life?",
+			"Prompt 5",
 	},
 ];

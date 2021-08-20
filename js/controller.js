@@ -420,7 +420,7 @@ function viewModel(model_id) {
 
 function logComment(comment_index) {
 	var url_address =
-		"https://docs.google.com/forms/d/e/1FAIpQLSdIRJlZV6xDutVMhLayJrkMKjIc5SfBmdQaOS8QJxv9qY5Png/formResponse?" +
+		"https://forms.gle/N5qkuHcxQ7rKxmj8A" +
 		"entry.975134550=" +
 		String(data2[comment_index].metadata.version) +
 		"&entry.1659984093=" +
@@ -500,7 +500,7 @@ function logInteractions() {
 	var date_obj = new Date();
 
 	var url_address =
-		"https://docs.google.com/forms/d/e/1FAIpQLSfUetyuPcVNNi2ohoX8zCQoT6ZJiyRyZDD-fZ-whma7E_Ou4Q/formResponse?" +
+		"https://forms.gle/RcsxLS5f52ZQQ49W9" +
 		"entry.1244428001=" +
 		"FossilLabv1.0_testversion" +
 		"&entry.1451520084=" +
