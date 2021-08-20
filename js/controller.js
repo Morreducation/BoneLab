@@ -133,7 +133,9 @@ function renderModel(model_url) {
 	light5.position.set(0, -500, 0);
 	scene.add(light5);
 	// Define renderer
-	renderer = new THREE.WebGLRenderer({ antialias: true });
+	renderer = new THREE.WebGLRenderer({
+		antialias: true
+	});
 	renderer.setSize(sec_dashboard.offsetWidth, sec_dashboard.offsetHeight);
 	console.log("Width set to:" + sec_dashboard.offsetWidth);
 	try {
@@ -175,14 +177,14 @@ function loadComment(comment_id) {
 			array_text_rightbar[comment_index].textContent = data2[i].comment;
 			array_text_reply_rightbar[comment_index].innerHTML = "";
 			data2[i].replies.forEach((element) => (array_text_reply_rightbar[comment_index].innerHTML += element + "<br>"));
-			array_text_label_rightbar[comment_index].textContent = data2[i].label.comment;
-			array_text_label_likes[comment_index].textContent = data2[i].like;
+			//array_text_label_rightbar[comment_index].textContent = data2[i].label.comment;
+			//array_text_label_likes[comment_index].textContent = data2[i].like;
 			array_text_label_replies[comment_index].textContent = data2[i].replies.length;
-			if (data2[i].label.comment == "Identify") {
+			/*if (data2[i].label.comment == "Identify") {
 				array_icon_label_rightbar[comment_index].innerHTML = "<i class='fas fa-info ml-2'></i>";
 			} else {
 				array_icon_label_rightbar[comment_index].innerHTML = "<i class='fas fa-search'></i>";
-			}
+			}*/
 		} catch {
 			array_comment_rightbar[comment_index].classList.add("d-none");
 			btn_next2.disabled = true;
@@ -195,7 +197,7 @@ function toggleComment(comment_id) {
 	switch (comment_id) {
 		case "btn_more_right_1":
 			if (array_more_rightbar[0].textContent == "Less") {
-				array_more_rightbar[0].textContent = "More";
+				array_more_rightbar[0].textContent = "Add Inference";
 			} else {
 				array_more_rightbar[0].textContent = "Less";
 			}
@@ -204,7 +206,7 @@ function toggleComment(comment_id) {
 			break;
 		case "btn_more_right_2":
 			if (array_more_rightbar[1].textContent == "Less") {
-				array_more_rightbar[1].textContent = "More";
+				array_more_rightbar[1].textContent = "Add Inference";
 			} else {
 				array_more_rightbar[1].textContent = "Less";
 			}
@@ -213,7 +215,7 @@ function toggleComment(comment_id) {
 			break;
 		case "btn_more_right_3":
 			if (array_more_rightbar[2].textContent == "Less") {
-				array_more_rightbar[2].textContent = "More";
+				array_more_rightbar[2].textContent = "Add Inference";
 			} else {
 				array_more_rightbar[2].textContent = "Less";
 			}
@@ -222,7 +224,7 @@ function toggleComment(comment_id) {
 			break;
 		case "btn_more_right_4":
 			if (array_more_rightbar[3].textContent == "Less") {
-				array_more_rightbar[3].textContent = "More";
+				array_more_rightbar[3].textContent = "Add Inference";
 			} else {
 				array_more_rightbar[3].textContent = "Less";
 			}
@@ -231,7 +233,7 @@ function toggleComment(comment_id) {
 			break;
 		case "btn_more_right_5":
 			if (array_more_rightbar[4].textContent == "Less") {
-				array_more_rightbar[4].textContent = "More";
+				array_more_rightbar[4].textContent = "Add Inference";
 			} else {
 				array_more_rightbar[4].textContent = "Less";
 			}
@@ -264,45 +266,46 @@ function likeComment(comment_id) {
 	console.log(data2);
 	loadComment(counter2);
 }
+
 function toggleReply(reply_id) {
 	switch (reply_id) {
 		case "btn_reply1":
-			if (array_btn_reply_rightbar[0].textContent == "Add a Reply") {
+			if (array_btn_reply_rightbar[0].textContent == "Add an Inference") {
 				array_btn_reply_rightbar[0].textContent = "Hide";
 			} else {
-				array_btn_reply_rightbar[0].textContent = "Add a Reply";
+				array_btn_reply_rightbar[0].textContent = "Add an Inference";
 			}
 			array_cont_reply_rightbar[0].classList.toggle("d-none");
 			break;
 		case "btn_reply2":
-			if (array_btn_reply_rightbar[1].textContent == "Add a Reply") {
+			if (array_btn_reply_rightbar[1].textContent == "Add an Inference") {
 				array_btn_reply_rightbar[1].textContent = "Hide";
 			} else {
-				array_btn_reply_rightbar[1].textContent = "Add a Reply";
+				array_btn_reply_rightbar[1].textContent = "Add an Inference";
 			}
 			array_cont_reply_rightbar[1].classList.toggle("d-none");
 			break;
 		case "btn_reply3":
-			if (array_btn_reply_rightbar[2].textContent == "Add a Reply") {
+			if (array_btn_reply_rightbar[2].textContent == "Add an Inference") {
 				array_btn_reply_rightbar[2].textContent = "Hide";
 			} else {
-				array_btn_reply_rightbar[2].textContent = "Add a Reply";
+				array_btn_reply_rightbar[2].textContent = "Add an Inference";
 			}
 			array_cont_reply_rightbar[2].classList.toggle("d-none");
 			break;
 		case "btn_reply4":
-			if (array_btn_reply_rightbar[3].textContent == "Add a Reply") {
+			if (array_btn_reply_rightbar[3].textContent == "Add an Inference") {
 				array_btn_reply_rightbar[3].textContent = "Hide";
 			} else {
-				array_btn_reply_rightbar[3].textContent = "Add a Reply";
+				array_btn_reply_rightbar[3].textContent = "Add an Inference";
 			}
 			array_cont_reply_rightbar[3].classList.toggle("d-none");
 			break;
 		case "btn_reply5":
-			if (array_btn_reply_rightbar[4].textContent == "Add a Reply") {
+			if (array_btn_reply_rightbar[4].textContent == "Add an Inference") {
 				array_btn_reply_rightbar[4].textContent = "Hide";
 			} else {
-				array_btn_reply_rightbar[4].textContent = "Add a Reply";
+				array_btn_reply_rightbar[4].textContent = "Add an Inference";
 			}
 			array_cont_reply_rightbar[4].classList.toggle("d-none");
 			break;
@@ -426,16 +429,7 @@ function logComment(comment_index) {
 		String(data2[comment_index].metadata.timestamp) +
 		"&entry.1968373221=" +
 		String(data2[comment_index].user.username) +
-		"&entry.964445780=" +
-		String(data2[comment_index].user.age) +
-		"&entry.278858602=" +
-		String(data2[comment_index].user.degree) +
-		"&entry.1275473730=" +
-		String(data2[comment_index].user.university) +
-		"&entry.2040944281=" +
-		String(data2[comment_index].user.gpa) +
-		"&entry.1660040951=" +
-		String(data2[comment_index].user.gender) +
+		
 		"&entry.1957288026=" +
 		String(data2[comment_index].model.id) +
 		"&entry.383392807=" +
@@ -491,12 +485,12 @@ function logComment(comment_index) {
 		"&submit=Submit";
 	console.log(url_address);
 	fetch(url_address, {
-		method: "post",
-		mode: "no-cors",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	})
+			method: "post",
+			mode: "no-cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
 		.then((response) => response.json())
 		.then((data) => console.log("data is", data))
 		.catch((error) => console.log("error is", error));
@@ -504,16 +498,7 @@ function logComment(comment_index) {
 
 function logInteractions() {
 	var date_obj = new Date();
-	var gender;
-	if (input_gender1.checked == true) {
-		gender = input_gender1.value;
-	} else if (input_gender2.checked == true) {
-		gender = input_gender2.value;
-	} else if (input_gender3.checked == true) {
-		gender = input_gender3.value;
-	} else {
-		gender = input_gender4.value;
-	}
+
 	var url_address =
 		"https://docs.google.com/forms/d/e/1FAIpQLSfUetyuPcVNNi2ohoX8zCQoT6ZJiyRyZDD-fZ-whma7E_Ou4Q/formResponse?" +
 		"entry.1244428001=" +
@@ -524,16 +509,6 @@ function logInteractions() {
 		String(Date.now()) +
 		"&entry.950746221=" +
 		String(input_username.value) +
-		"&entry.2031201778=" +
-		String(input_age.value) +
-		"&entry.622857593=" +
-		String(input_degree.value) +
-		"&entry.370070751=" +
-		String(input_university.value) +
-		"&entry.69374522=" +
-		String(input_gpa.value) +
-		"&entry.1557537700=" +
-		String(gender) +
 		"&entry.1162289002=" +
 		"a00001" +
 		"&entry.1631159768=" +
@@ -579,12 +554,12 @@ function logInteractions() {
 		"&submit=Submit";
 	console.log(url_address);
 	fetch(url_address, {
-		method: "post",
-		mode: "no-cors",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	})
+			method: "post",
+			mode: "no-cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
 		.then((response) => response.json())
 		.then((data) => console.log("data is", data))
 		.catch((error) => console.log("error is", error));

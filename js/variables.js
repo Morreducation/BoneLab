@@ -4,14 +4,7 @@ var cont_toolbar = document.getElementById("cont_toolbar");
 var cont_dashboard = document.getElementById("cont_dashboard");
 // Inputs
 var input_username = document.getElementById("input_username");
-var input_gender1 = document.getElementById("input_gender1");
-var input_gender2 = document.getElementById("input_gender2");
-var input_gender3 = document.getElementById("input_gender3");
-var input_gender4 = document.getElementById("input_gender4");
-var input_age = document.getElementById("input_age");
-var input_degree = document.getElementById("input_degree");
-var input_university = document.getElementById("input_university");
-var input_gpa = document.getElementById("input_gpa");
+
 // Buttons
 var btn_export = document.getElementById("btn_export");
 var btn_start = document.getElementById("btn_start");
@@ -51,7 +44,7 @@ var text_agent = document.getElementById("text_agent");
 var input_comment = document.getElementById("input_comment");
 var btn_add = document.getElementById("btn_add");
 var array_comment_rightbar = document.querySelectorAll(".cont_comment");
-var array_like_rightbar = document.querySelectorAll(".btn_like_rightbar");
+/*var array_like_rightbar = document.querySelectorAll(".btn_like_rightbar");*/
 var array_more_rightbar = document.querySelectorAll(".btn_more_rightbar");
 var array_text_rightbar = document.querySelectorAll(".text_comment");
 var array_text_reply_rightbar = document.querySelectorAll(".text_reply");
@@ -71,3 +64,6 @@ var observation_count = 0;
 var timer;
 var fossil;
 let scene, camera, renderer, model;
+
+/* Fall 2020 - New variables */
+var list_prompts = document.querySelectorAll(".dropdown-item");
