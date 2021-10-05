@@ -338,6 +338,7 @@ function addReply(reply_id) {
 	}
 	console.log(data2);
 	loadComment(counter2);
+	logComment(counter2); // Revision EP Oct 5th 2021 - Call to log comment once a new inference is added
 }
 
 function updateAgent(prompt_id) {
